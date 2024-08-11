@@ -1,3 +1,5 @@
+import com.google.cloud.tools.jib.api.buildplan.ImageFormat
+
 plugins {
     id("java")
     application
@@ -27,6 +29,7 @@ java {
 jib {
     container {
         mainClass = launcherClassName
+        format = ImageFormat.OCI
     }
     setAllowInsecureRegistries(true)
     to {
